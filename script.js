@@ -37,9 +37,9 @@ function getQuote() {
     const quote = quotes[Math.floor(Math.random() * quotes.length)];
     //check if author is null
     if(!quote.author){
-        authorText.textContent = 'Unknown';
+        authorText.textContent = '- Unknown';
     } else {
-        authorText.textContent = quote.author;
+        authorText.textContent = `- ${quote.author}`;
     }
     //check quote length to determine style
     if(quote.text.length > 100) {
@@ -54,7 +54,7 @@ function getQuote() {
 }
 
 function tweetQuote() {
-    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} - ${authorText.textContent}`;
+    const twitterUrl = `https://twitter.com/intent/tweet?text=${quoteText.textContent} ${authorText.textContent}`;
     window.open(twitterUrl, '_blank');
 }
 
